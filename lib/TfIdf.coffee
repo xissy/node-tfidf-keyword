@@ -21,10 +21,7 @@ class TfIdf
     @sortedWords = null
 
 
-  extractKeywords: (words, options) ->
-    if not options?
-      options = {}
-
+  sortWords: ->
     if not @sortedWords?
       @sortedWords = []
       
@@ -37,6 +34,19 @@ class TfIdf
 
       for sortedWord, index in @sortedWords
         @wordMap[sortedWord.word].rank = index
+
+
+  getWordsLength: ->
+    @sortWords()
+
+    @sortedWords?.length
+
+
+  extractKeywords: (words, options) ->
+    if not options?
+      options = {}
+
+    @sortWords()
 
     rankedWords = []
     for word in words

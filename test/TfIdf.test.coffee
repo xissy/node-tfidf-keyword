@@ -18,6 +18,10 @@ describe 'TfIdf', ->
         'c'
       ]
 
+  describe '.getWordsLength(...)', ->
+    it 'should be done', ->
+      tfIdf.getWordsLength()
+
   describe '.extractKeywords(...)', ->
     it 'should be done', ->
       tfIdf.extractKeywords [
